@@ -1,0 +1,32 @@
+{
+  "name": "gen-readme-outline",
+  "version": "1.0.0",
+  "description": "will help users create a README for projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaguilera23/gen-readme-outline.git"
+  },
+  "keywords": [
+    "command",
+    "commandline",
+    "readme",
+    "generate",
+    "create",
+    "outline",
+    "cl",
+    "node"
+  ],
+  "author": "Kayla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaguilera23/gen-readme-outline/issues"
+  },
+  "homepage": "https://github.com/kaguilera23/gen-readme-outline#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
