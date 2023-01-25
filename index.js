@@ -1,17 +1,15 @@
 // TODO: Include packages needed for this application
-var inquirer = require("inquirer");
+const inquirer = require("inquirer");
+const fs = require("fs");
+const markdown = require("./utils/generateMarkdown");
+
 
 // TODO: Create an array of questions for user input
 const questions = [ 
     {
         type: "input",
-        name: "name",
+        name: "title",
         message:"What is the Name of your Project?",
-    },
-    {
-        type: "input",
-        name: "description",
-        message:"Provide a Description"
     },
     {
         type: "list",
@@ -20,6 +18,12 @@ const questions = [
         choices: ["yes", "no"],
         default: "yes"
     },
+    {
+        type: "input",
+        name: "description",
+        message:"Provide a Description"
+    },
+    
     {
         type: "input",
         name: "installation",
@@ -34,29 +38,48 @@ const questions = [
         type: "rawlist",
         name: "license",
         message:"What is your License?",
-        choices: ["Apache", "BSD", "GNU", "IBM", "ISC", "MIT", "Unlicense", "Other"]
+        choices: ["Apache", "BSD", "GNU", "ISC", "MIT", "Unlicense", "Other"]
     },
     {
         type: "input", 
-        name: "contributors",
-        message: "Name Any Contributing Authors"
+        name: "contributing",
+        message: "How Can Someone Contribute to your Project?"
     },
     {
         type: "input",
         name: "tests",
         message: "Write any Tests for your Project", 
         default: "None"
+    }, 
+    {
+        type: "input", 
+        name: "email", 
+        message: "What is your email address?"
+    }, 
+    {
+        type: "input", 
+        name: "github", 
+        message: "What is your GitHub Username?"
     }
 
 ];
 
-inquirer.prompt(questions).then((answers) => console.log(answers));
-
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    
+
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+    
+        const inputs = answers;
+        const {title, ...data} = inputs;
+
+        markdown.generateMarkdown(data);
+    });
+}
 
 // Function call to initialize app
 init();
