@@ -15,22 +15,7 @@
   ## Installation  
   Must install Node.js to your computer and must install Inquirer npm package using the command: npm i inquirer@8.2.4
 
-  ## Usage  
+  ## Link
   
-
-
-  ## License  
-  Unlicense
-
-  ## How to Contribute  
-  N/A
-
-
-  ## Tests  
-  None
-
-
-  ## Questions  
-  For any other questions, please contact me at aguilera.k02@gmail.com or visit my gitHub at kaguiler23
 
 
