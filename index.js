@@ -12,13 +12,6 @@ const questions = [
         message:"What is the Name of your Project?",
     },
     {
-        type: "list",
-        name: "tableOfContents",
-        message:"Will you have a Table of Contents?",
-        choices: ["yes", "no"],
-        default: "yes"
-    },
-    {
         type: "input",
         name: "description",
         message:"Provide a Description"
@@ -80,8 +73,8 @@ function writeToFile(data) {
 
 function init() {
     inquirer.prompt(questions).then((answers)=>{
-        const {...data} = answers;
-        const readme = markdown.generateMarkdown(data);
+        console.log(answers)
+        const readme = markdown.generateMarkdown(answers);
         writeToFile(readme)
         
     })
